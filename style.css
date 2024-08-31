@@ -3,18 +3,21 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: linear-gradient(135deg, #f4f4f4, #e0e0e01e);
 }
 
 header{
     font-size: 1.5rem;
-    background-color: #000;
+    background: linear-gradient(135deg, #000, #444);
     color: #fff;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 nav ul{
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 nav ul li{
     display: inline;
@@ -23,6 +26,7 @@ nav ul li{
 nav ul li a{
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 nav ul li a:hover{
     color: #007bff;
@@ -30,21 +34,28 @@ nav ul li a:hover{
 
 #hero{
     font-size: 1.5rem;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background: linear-gradient(135deg, #007bff, #0057b33b);
+    color: #fff;
+    padding: 40px 20px;
     text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cta-btn{
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #007bff;
     text-decoration: none;
     border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .cta-btn:hover{
-    background-color: #0056b3;
+    background-color: #f1f1f1;
+    color: #0056b3;
 }
 
 #alfabeto, #sobre, #contato{
@@ -56,30 +67,36 @@ nav ul li a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
 }
 
 .letra{
     margin: 10px;
     padding: 20px;
-    background-color: #007bff;
+    background: linear-gradient(135deg, #007bff, #0057b33b);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
 }
 .letra:hover{
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #0056b3, #003d7a1f);
+    transform: translateY(-3px);
 }
 
 .img-exibida{
     position: relative;
     width: 360px;
-    height: 400px;
+    height: 100%;
     margin: 20px auto;
     text-align: center;
-    aspect-ratio: 3 / 2; 
+    aspect-ratio: 3 / 2;
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.356);
 }
 
 .img-exibida img{
@@ -95,12 +112,20 @@ nav ul li a:hover{
 
 #sobre{
     font-size: 1.5rem;
-    background-color: #ccc;
+    background: linear-gradient(135deg, #ccc, #aaaaaa13);
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contato{
     font-size: 1.5rem;
-    background-color: #938989;
+    background: linear-gradient(135deg, #938989, #6e6e6e15);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contato form{
@@ -110,18 +135,15 @@ nav ul li a:hover{
     flex-direction: column;
 }
 
-.contato input{
+.contato input, .contato textarea {
     font-size: 18px;
-    width: 150px;
-    height: 35px;
+    width: 100%;
+    max-width: 400px;
     margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.contact textarea{
-    width: 300px;
-    height: 400px;
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn{
@@ -133,56 +155,58 @@ nav ul li a:hover{
     font-size: 18px;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background: linear-gradient(135deg, #007bff, #0057b33b);
     color: #fff;
     text-decoration: none;
-    border-radius: 7px;
+    border-radius: 8px;
     cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
 }
 
 .btn button:hover{
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #0056b3, #003d7a1f);
+    transform: translateY(-3px);
 }
 
 footer{
-    background-color: #000;
+    background: linear-gradient(135deg, #000, #333);
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
- #alfabeto{
-    padding: 1rem;
-    text-align: center;
- }
- .alfabeto-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
-    flex-wrap: wrap;
- }
- .alfabeto-container{
-    flex: 1;
-    overflow-y: auto;
-    max-height: 35vh;
-    padding-right: 1rem;
-    box-sizing: border-box;
- }
- .letra{
-    font-size: 16px;
-    padding: 18px;
- }
- .img-exibida{
-    flex: 1;
-    max-width: 100%;
-    margin-top: 1rem;
- }
- .img-exibida img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
- }
+    #alfabeto{
+        padding: 1rem;
+        text-align: center;
+    }
+    .alfabeto-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .alfabeto-container{
+        flex: 1;
+        overflow-y: auto;
+        max-height: 35vh;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+    .letra{
+        font-size: 16px;
+        padding: 18px;
+    }
+    .img-exibida{
+        flex: 1;
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+    .img-exibida img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
 }
