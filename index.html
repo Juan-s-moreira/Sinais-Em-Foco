@@ -1,92 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sinais Em Foco - aprenda linguagem de sinais</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Sinais Em Foco</h1>
-        <nav>
-            <ul>
-                <li><a href="#alfabeto">Alfabeto</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+      <h1>Sinais Em Foco</h1>
+      <nav>
+        <ul>
+          <li><a href="#alfabeto">Alfabeto</a></li>
+          <li><a href="#palavra">Palavra</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section id="hero">
-            <h2>Aprenda linguagem de Sinais</h2>
-            <p>Explore o alfabeto em libras</p>
-            <a href="#alfabeto" class="cta-btn">Comece Agora</a>
-        </section>
-        <section id="alfabeto">
-            <div class="texto">
-                <h2>Alfabeto Em Libras</h2>
-            </div>
-            <div class="alfabeto-content">
-                <div class="alfabeto-container">
-                    <button class="letra" data-letra="a">A</button>
-                    <button class="letra" data-letra="b">B</button>
-                    <button class="letra" data-letra="c">C</button>
-                    <button class="letra" data-letra="d">D</button>
-                    <button class="letra" data-letra="e">E</button>
-                    <button class="letra" data-letra="f">F</button>
-                    <button class="letra" data-letra="g">G</button>
-                    <button class="letra" data-letra="h">H</button>
-                    <button class="letra" data-letra="i">I</button>
-                    <button class="letra" data-letra="j">J</button>
-                    <button class="letra" data-letra="k">K</button>
-                    <button class="letra" data-letra="l">L</button>
-                    <button class="letra" data-letra="m">M</button>
-                    <button class="letra" data-letra="n">N</button>
-                    <button class="letra" data-letra="o">O</button>
-                    <button class="letra" data-letra="p">P</button>
-                    <button class="letra" data-letra="q">Q</button>
-                    <button class="letra" data-letra="r">R</button>
-                    <button class="letra" data-letra="s">S</button>
-                    <button class="letra" data-letra="t">T</button>
-                    <button class="letra" data-letra="u">U</button>
-                    <button class="letra" data-letra="v">V</button>
-                    <button class="letra" data-letra="w">W</button>
-                    <button class="letra" data-letra="x">X</button>
-                    <button class="letra" data-letra="y">Y</button>
-                    <button class="letra" data-letra="z">Z</button>
-                </div>
-                <div id="img-exibida" class="img-exibida skeleton">
-                    <img src="./assets/capa.png" alt="">
-                </div>
-            </div>
-        </section>
-        <section id="sobre">
-            <h2>Sobre</h2>
-            <p>Bem-vindo ao Sinais Em Foco! <br>
-                Nosso objetivo é facilitar e levar o aprendizado da linguagem de sinais às pessoas.</p>
-        </section>
-        <section id="contato" class="contato">
-                <h2>Contato</h2>
-                <form method="post">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+      <section id="hero">
+        <h2>Aprenda linguagem de Sinais</h2>
+        <p>Explore o alfabeto em libras</p>
+        <a href="#alfabeto" class="cta-btn">Comece Agora</a>
+      </section>
+      <section id="alfabeto">
+        <div class="texto">
+          <h2>Alfabeto Em Libras</h2>
+        </div>
+        <div class="alfabeto-content">
+          <div class="alfabeto-container">
+            <button class="letra" data-letra="a">A</button>
+            <button class="letra" data-letra="b">B</button>
+            <button class="letra" data-letra="c">C</button>
+            <button class="letra" data-letra="d">D</button>
+            <button class="letra" data-letra="e">E</button>
+            <button class="letra" data-letra="f">F</button>
+            <button class="letra" data-letra="g">G</button>
+            <button class="letra" data-letra="h">H</button>
+            <button class="letra" data-letra="i">I</button>
+            <button class="letra" data-letra="j">J</button>
+            <button class="letra" data-letra="k">K</button>
+            <button class="letra" data-letra="l">L</button>
+            <button class="letra" data-letra="m">M</button>
+            <button class="letra" data-letra="n">N</button>
+            <button class="letra" data-letra="o">O</button>
+            <button class="letra" data-letra="p">P</button>
+            <button class="letra" data-letra="q">Q</button>
+            <button class="letra" data-letra="r">R</button>
+            <button class="letra" data-letra="s">S</button>
+            <button class="letra" data-letra="t">T</button>
+            <button class="letra" data-letra="u">U</button>
+            <button class="letra" data-letra="v">V</button>
+            <button class="letra" data-letra="w">W</button>
+            <button class="letra" data-letra="x">X</button>
+            <button class="letra" data-letra="y">Y</button>
+            <button class="letra" data-letra="z">Z</button>
+          </div>
+          <div id="img-exibida" class="img-exibida skeleton">
+            <img src="./assets/capa.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section id="palavra">
+        <h2>Vamos começar com o seu nome e palavras básicas?</h2>
+        <input
+          type="text"
+          id="input-palavra"
+          placeholder="Digite uma palavra"
+        />
+        <button id="mostrar-img">Mostrar palavra</button>
+        <div id="img-palavra" class="img-palavra"></div>
+      </section>
+      <section id="sobre">
+        <h2>Sobre</h2>
+        <p>
+          Bem-vindo ao Sinais Em Foco! <br />
+          Nosso objetivo é facilitar e levar o aprendizado da linguagem de
+          sinais às pessoas.
+        </p>
+      </section>
+      <section id="contato" class="contato">
+        <h2>Contato</h2>
+        <form method="post">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required />
 
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" required>
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required />
 
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" required></textarea>
-                    <div class="btn">
-                        <button type="submit">Enviar</button>
-                    </div>
-                </form>
-            </section>
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" required></textarea>
+          <div class="btn">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2024 Sinais Em Foco. Todos os direitos reservados.</p>
-        <a href="#sobre">Sobre</a> | <a href="#contato">Contato</a>
+      <p>&copy; 2024 Sinais Em Foco. Todos os direitos reservados.</p>
+      <a href="#sobre">Sobre</a> | <a href="#contato">Contato</a>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
