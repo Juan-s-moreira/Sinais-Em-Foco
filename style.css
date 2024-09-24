@@ -236,10 +236,11 @@ footer{
         overflow-y: auto;
         max-height: 35vh;
         padding-right: 1rem;
+        gap: 10px;
         box-sizing: border-box;
     }
     .letra{
-        font-size: 16px;
+        font-size: 15px;
         padding: 18px;
     }
     .img-exibida{
