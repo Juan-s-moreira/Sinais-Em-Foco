@@ -142,9 +142,6 @@ nav ul li a:hover{
     margin: 5px;
 }
 
-
-
-
 #sobre{
     font-size: 1.5rem;
     background: linear-gradient(135deg, #ccc, #aaaaaa13);
@@ -157,52 +154,10 @@ nav ul li a:hover{
 .contato{
     font-size: 1.5rem;
     background: linear-gradient(135deg, #938989, #6e6e6e15);
-    color: #fff;
+    color: #333;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.contato form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.contato input, .contato textarea {
-    font-size: 18px;
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.btn{
-    text-align: center;
-    margin-top: 10px;
-}
-
-.btn button{
-    font-size: 18px;
-    display: inline-block;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #007bff, #0057b33b);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, transform 0.3s;
-}
-
-.btn button:hover{
-    background: linear-gradient(135deg, #0056b3, #003d7a1f);
-    transform: translateY(-3px);
 }
 
 footer{
