@@ -1,0 +1,65 @@
+{
+  "name": "@boxicons/js",
+  "version": "1.0.1",
+  "description": "Vanilla JavaScript library for Boxicons with tree-shaking support",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    },
+    "./icons/*": {
+      "types": "./dist/types/icons/*.d.ts",
+      "import": "./dist/esm/icons/*.js",
+      "require": "./dist/cjs/icons/*.js",
+      "default": "./dist/cjs/icons/*.js"
+    },
+    "./auto": {
+      "types": "./dist/types/auto.d.ts",
+      "import": "./dist/esm/auto.js",
+      "require": "./dist/cjs/auto.js",
+      "default": "./dist/cjs/auto.js"
+    }
+  },
+  "sideEffects": [
+    "./dist/esm/auto.js",
+    "./dist/cjs/auto.js"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "generate": "node scripts/generate-icons.js",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build": "npm run generate && npm run build:esm && npm run build:cjs && npm run build:types",
+    "clean": "rm -rf dist src/icons",
+    "prepublishOnly": "npm run clean && npm run build",
+    "publish:package": "npm publish"
+  },
+  "devDependencies": {
+    "@boxicons/core": "file:../boxicons-core",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "boxicons",
+    "icons",
+    "javascript",
+    "vanilla-js",
+    "svg",
+    "tree-shaking"
+  ],
+  "author": "Boxicons",
+  "homepage": "https://boxicons.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/box-icons/boxicons"
+  }
+}
