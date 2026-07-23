@@ -170,6 +170,16 @@ footer {
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.caracter-erro {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    border: 2px dashed #ff4a4a;
+    color: #ff4a4a;
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: #ffeaea;
+}
 @media (max-width: 768px) {
     nav ul li {
         font-size: 1rem;
@@ -212,13 +222,3 @@ footer {
     }
 }
 
-.caracter-erro {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 2px;
-    border: 2px dashed #ff4a4a;
-    color: #ff4a4a;
-    font-weight: bold;
-    border-radius: 4px;
-    background-color: #ffeaea;
-}

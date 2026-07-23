@@ -22,6 +22,6 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
-    "@boxicons/js": "^1.0.1"
+    
   }
 }
