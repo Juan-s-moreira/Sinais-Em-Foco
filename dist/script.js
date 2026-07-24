@@ -35,8 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (inputPalavra && mostrarImagens && imagensPalavra) {
         const traduzirPalavra = () => {
             imagensPalavra.innerHTML = '';
-            const palavra = inputPalavra.value.toLowerCase();
-            for (let letra of palavra) {
+            const palavra = inputPalavra.value;
+            if (!palavra.trim())
+                return;
+            for (let letra of palavra.toLocaleLowerCase()) {
                 if (letra === ' ') {
                     const espaco = document.createElement('span');
                     espaco.style.display = 'inline-block';
@@ -48,6 +50,37 @@ document.addEventListener('DOMContentLoaded', function () {
                     imagensPalavra.appendChild(imagemLetra);
                 }
             }
+            let elementoTextoVLibras = document.getElementById('texto-vlibras-temp');
+            if (!elementoTextoVLibras) {
+                elementoTextoVLibras = document.createElement('div');
+                elementoTextoVLibras.id = 'texto-vlibras-temp';
+                // Esconde visualmente mas deixa acessível no DOM
+                elementoTextoVLibras.style.position = 'absolute';
+                elementoTextoVLibras.style.left = '-9999px';
+                document.body.appendChild(elementoTextoVLibras);
+            }
+            elementoTextoVLibras.innerText = palavra;
+            // 3. Força o evento de clique/seleção que o VLibras intercepta
+            const eventoClique = new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            });
+            elementoTextoVLibras.dispatchEvent(eventoClique);
+            // const widgetVLibras = (window as any).vlibras
+            // const vlibrasWidget = (window as any).vlibras;
+            // if (vlibrasWidget?.plugin && typeof vlibrasWidget.plugin.translate === 'function') {
+            //     vlibrasWidget.plugin.translate(palavra);
+            // }
+            // if(widgetVLibras){
+            //     if(typeof widgetVLibras.translate === 'function'){
+            //         widgetVLibras.translate(palavra)
+            //     } else if (typeof widgetVLibras.player?.translate === 'function') {
+            //         widgetVLibras.player.translate(palavra)
+            //     } else if (typeof (window as any).VLibras?.translate === 'function') {
+            //         (window as any).VLibras.translate(palavra)
+            //     }
+            // }
         };
         mostrarImagens.addEventListener('click', traduzirPalavra);
         inputPalavra.addEventListener('keypress', (event) => {
