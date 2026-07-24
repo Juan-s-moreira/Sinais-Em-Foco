@@ -1,5 +1,25 @@
 import { alfabetoLibras } from "./alfabeto.js";
 
+function criarSinais(letra: string): HTMLImageElement | HTMLSpanElement {
+    const sinalEncontrado = alfabetoLibras.find(
+        item => item.letra.toLowerCase() === letra.toLowerCase()
+    )
+
+    if(sinalEncontrado) {
+        const img = document.createElement('img')
+        img.src = sinalEncontrado.caminhoImg
+        img.alt = `letra ${letra.toUpperCase()} em LIBRAS`
+        img.title = `letra ${letra.toUpperCase()} em LIBRAS`
+        return img
+    } else {
+        const caracterInvalido = document.createElement('span')
+        caracterInvalido.classList.add('caracter-erro')
+        caracterInvalido.innerText = letra.toUpperCase()
+        caracterInvalido.title = `o caracter "${letra}" não possui tradução nessa aplicação.`
+        return caracterInvalido
+    }
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const letras = document.querySelectorAll('.letra') as NodeListOf<HTMLButtonElement>;
@@ -12,25 +32,17 @@ document.addEventListener('DOMContentLoaded', function() {
         letra.addEventListener('click', function(){
             const letraData = letra.getAttribute('data-letra');
 
-            if(!letraData) return;
+            if(!letraData || !imagemExibida) return;
 
-            const sinalEncontrado = alfabetoLibras.find(
-                item => item.letra.toLowerCase() === letraData.toLowerCase()
-            )
-            const imagemSrc = sinalEncontrado ? sinalEncontrado.caminhoImg : `assets/img-${letraData}.png`;
-            const descricaoAl = sinalEncontrado ? sinalEncontrado.descricaoAl : `Letra ${letraData.toUpperCase()} em LIBRAS`;
+         const imagemLetra = criarSinais(letraData)
 
-            if(imagemExibida){
-
-                imagemExibida.innerHTML = `
-                <img src="${imagemSrc}" alt=" ${descricaoAl}">
-                `;
-                }
+         imagemExibida.innerHTML = ''
+         imagemExibida.appendChild(imagemLetra)
         })
     });
 
     if(inputPalavra && mostrarImagens && imagensPalavra){
-        mostrarImagens.addEventListener('click', function(){
+      const traduzirPalavra = () =>{
             imagensPalavra.innerHTML = '';
 
         const palavra = inputPalavra.value.toLowerCase();
@@ -42,31 +54,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 espaco.style.width = '20px'
                 imagensPalavra.appendChild(espaco);
             } else {
-                const sinalEncontrado = alfabetoLibras.find(
-                    item => item.letra.toLowerCase() === letra
-
-                )
-                if(sinalEncontrado) {
-                    const img = document.createElement('img');
-                    img.src = sinalEncontrado ? sinalEncontrado.caminhoImg : `assets/img-${letra}.png`;
-                    img.alt = `letra ${letra.toUpperCase()} em LIBRAS`;
-                    img.title = `letra ${letra.toUpperCase()} em LIBRAS`
-                    imagensPalavra.appendChild(img);
-
-                } else {
-                    const caracterInvalido = document.createElement('span')
-                    caracterInvalido.classList.add('caracter-erro')
-                    caracterInvalido.innerText = letra.toUpperCase()
-                    caracterInvalido.title = `o caracter  "${letra}" não possui tradução nessa aplicação.`
-
-                    imagensPalavra.appendChild(caracterInvalido)
-                }
-                
-                
+                const imagemLetra = criarSinais(letra)
+                imagensPalavra.appendChild(imagemLetra)
             }
     }
-});
+}
+mostrarImagens.addEventListener('click', traduzirPalavra)
+
+    inputPalavra.addEventListener('keypress', (event: KeyboardEvent) => {
+        if(event.key === 'Enter') {
+          traduzirPalavra()
+        }
+    })
+
+    inputPalavra.addEventListener('input', () => {
+        if(inputPalavra.value.trim() === '') {
+            imagensPalavra.innerHTML = ''
+        }
+    })
 }
 });
-
-
