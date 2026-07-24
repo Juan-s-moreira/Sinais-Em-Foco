@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!elementoTextoVLibras) {
         elementoTextoVLibras = document.createElement('div');
         elementoTextoVLibras.id = 'texto-vlibras-temp';
-        // Esconde visualmente mas deixa acessível no DOM
         elementoTextoVLibras.style.position = 'absolute';
         elementoTextoVLibras.style.left = '-9999px';
         document.body.appendChild(elementoTextoVLibras);
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     elementoTextoVLibras.innerText = palavra;
 
-    // 3. Força o evento de clique/seleção que o VLibras intercepta
+    
     const eventoClique = new MouseEvent('click', {
         bubbles: true,
         cancelable: true,
